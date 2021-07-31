@@ -1,15 +1,13 @@
-Scripts for working with trees
+A few helper functions for working with trees
 ================
-
-# A few tools for Working with trees
 
 dependencies on
 
--   `data.tree` by Christoph Glur for converting data between tree
+  - `data.tree` by Christoph Glur for converting data between tree
     representations and dataframes
--   `networkD3` by Christopher Gandrud, JJ Allaire, Kent Russell, & CJ
+  - `networkD3` by Christopher Gandrud, JJ Allaire, Kent Russell, & CJ
     Yetman for representing series of tree levels as Sankey diagrams
--   `tidyverse` by Hadley Wickham et al. for dataframe manipulations
+  - `tidyverse` by Hadley Wickham et al. for dataframe manipulations
 
 ## Example Data: SomeCo org charts
 
@@ -25,8 +23,7 @@ dependencies on
 df <- read_csv("SomeCoOrg.csv")
 ```
 
-    ## 
-    ## -- Column specification --------------------------------------------------------
+    ## Parsed with column specification:
     ## cols(
     ##   `Company ID` = col_character(),
     ##   `Org ID` = col_character(),

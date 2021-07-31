@@ -1,5 +1,5 @@
 ---
-title: "Scripts for working with trees"
+title: "A few helper functions for working with trees"
 output: github_document 
 ---
 
@@ -12,7 +12,6 @@ library(data.tree)
 source("tree_utils.R")
 ```
 
-# A few tools for Working with trees
 
 dependencies on 
 
