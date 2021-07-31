@@ -1,0 +1,45 @@
+---
+title: "Scripts for working with trees"
+output: github_document 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(knitr)
+library(data.tree)
+
+source("tree_utils.R")
+```
+
+# A few tools for Working with trees
+
+dependencies on 
+
+- `data.tree` by Christoph Glur for converting data between tree representations and dataframes
+- `networkD3` by Christopher Gandrud, JJ Allaire, Kent Russell, & CJ Yetman for representing series of tree levels as Sankey diagrams
+- `tidyverse` by Hadley Wickham et al. for dataframe manipulations 
+
+## Example Data: SomeCo org charts
+
+## `naive_level_order` - Organize a DF to make it most likely a Tree can be resolved
+```{r naive_level_order}
+#TODO add naive_level_node example
+```
+
+
+
+## `equivalent_leaves` - search a tree for nodes with the same leaves as a node in another tree 
+```{r equivalent_nodes}
+
+df <- read_csv("SomeCoOrg.csv")
+id_tree <-  df %>% naive_level_order() %>% select(ends_with("ID")) %>% df_to_tree()
+name_tree <- df %>% naive_level_order() %>% select(ends_with("Name"), "Unit ID") %>% df_to_tree()
+print(name_tree)
+print(id_tree)
+equivalent_leaves(id_tree, name_tree)
+equivalent_leaves(name_tree, id_tree)
+
+```
+
+
