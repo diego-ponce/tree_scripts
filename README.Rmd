@@ -21,23 +21,36 @@ dependencies on
 
 ## Example Data: SomeCo org charts
 
-## `naive_level_order` - Organize a DF to make it most likely a Tree can be resolved
-```{r naive_level_order}
-#TODO add naive_level_node example
+A simple org chart with department names and id in the same table (ID is just a truncated MD5 hash of the department name)
+
+```{r}
+df <- read_csv("SomeCoOrg.csv")
+df %>% kable()
 ```
+
+## `naive_level_order` - Organize a DF to make it most likely a Tree can be resolved
+
+What if we get a levelized tree, but the columns are not arranged left-to-right higher-to-lower level (the order used by `data.tree::FromDataFrameTable`)?
+`naive_level_order` takes the df and orders columns by least to most distinct values (which approximates the LtoR HtoL order described above).
+```{r naive_level_order}
+set.seed(1234)
+randomized_df <- df %>% select(sample(names(df %>% select(ends_with("Name"), "Unit ID"))))
+randomized_df %>% kable()
+randomized_df %>% naive_level_order() %>% kable()
+```
+
 
 
 
 ## `equivalent_leaves` - search a tree for nodes with the same leaves as a node in another tree 
 ```{r equivalent_nodes}
 
-df <- read_csv("SomeCoOrg.csv")
 id_tree <-  df %>% naive_level_order() %>% select(ends_with("ID")) %>% df_to_tree()
 name_tree <- df %>% naive_level_order() %>% select(ends_with("Name"), "Unit ID") %>% df_to_tree()
 print(name_tree)
 print(id_tree)
-equivalent_leaves(id_tree, name_tree)
-equivalent_leaves(name_tree, id_tree)
+equivalent_leaves(id_tree, name_tree) %>% kable()
+equivalent_leaves(name_tree, id_tree) %>% kable()
 
 ```
 
