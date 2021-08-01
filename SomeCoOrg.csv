@@ -1,19 +1,11 @@
-Company ID,Org ID,Div ID,Company Name,Org Name,Div Name,Unit Name,Unit ID
-a9621,c4829,9bbd4,SomeCo,Finance,Accounting,Corporate Accounting,001
-a9621,c4829,9bbd4,SomeCo,Finance,Accounting,Reporting,002
-a9621,c4829,0de29,SomeCo,Finance,Forecasting,FP&A,003
-a9621,456d0,ce266,SomeCo,Operations,Customer,Customer Service,004
-a9621,456d0,ce266,SomeCo,Operations,Customer,Customer Billing,005
-a9621,456d0,ce266,SomeCo,Operations,Customer,Marketing,006
-a9621,456d0,ce266,SomeCo,Operations,Customer,Research,007
-a9621,456d0,10d0d,SomeCo,Operations,Maintenance,Facilities,008
-a9621,456d0,10d0d,SomeCo,Operations,Maintenance,Landscaping,009
-a9621,456d0,2fae3,SomeCo,Operations,Security,Building,010
-a9621,d1909,e654f,SomeCo,Human Resources,Benefits,Compensation,011
-a9621,d1909,e654f,SomeCo,Human Resources,Benefits,Insurance,012
-a9621,d1909,6d43c,SomeCo,Human Resources,Talent,Recruiting,013
-a9621,d1909,6d43c,SomeCo,Human Resources,Talent,Education,014
-a9621,cd321,0889f,SomeCo,IT,Information Security,Vulnerability Management,015
-a9621,cd321,0889f,SomeCo,IT,Information Security,Incident Response,016
-a9621,cd321,eec89,SomeCo,IT,Network,On-Prem,017
-a9621,cd321,eec89,SomeCo,IT,Network,Cloud,018
+Company ID,Company Name,Org ID,Org Name,Div ID,Div Name,Unit Name,Unit ID
+a9621,SomeCo,c4829,Finance,9bbd4,Accounting,Corporate Accounting,001
+a9621,SomeCo,c4829,Finance,9bbd4,Accounting,Reporting,002
+a9621,SomeCo,c4829,Finance,0de29,Forecasting,FP&A,003
+a9621,SomeCo,456d0,Operations,ce266,Customer,Customer Service,004
+a9621,SomeCo,456d0,Operations,ce266,Customer,Customer Billing,005
+a9621,SomeCo,456d0,Operations,ce266,Customer,Marketing,006
+a9621,SomeCo,456d0,Operations,ce266,Customer,Research,007
+a9621,SomeCo,456d0,Operations,10d0d,Maintenance,Facilities,008
+a9621,SomeCo,456d0,Operations,10d0d,Maintenance,Landscaping,009
+a9621,SomeCo,456d0,Operations,2fae3,Security,Building,010
