@@ -54,4 +54,11 @@ equivalent_leaves(name_tree, id_tree) %>% kable()
 
 ```
 
+`equivalent_leaves` also has a `verbose` parameter to inspect the search
+
+```{r}
+
+equivalent_leaves(name_tree, id_tree, verbose=TRUE) %>% kable()
+
+```
 

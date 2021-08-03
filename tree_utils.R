@@ -1,4 +1,4 @@
-# utility functions for the PP_WD_Tree_Proposal
+# utility functions for working with trees
 library(networkD3)
 library(data.tree)
 library(tidyverse)
@@ -82,9 +82,6 @@ naive_level_order <- function(df){
     pull(rowname)
     
   return(df %>% select(all_of(df_nest_order))) 
-  
-  
-  
 }
 
 
@@ -116,7 +113,7 @@ search_for_matching <- function(anode, bnode, search_depth=0, verbose=FALSE){
     df <- bnode$children %>% map_dfr(~ search_for_matching(anode, .x, search_depth=search_depth, verbose = verbose))
   
   }
-  else if(verbose) cat(" stopping at node", bnode$name, "\n")
+  else if(verbose) cat(anode$name," has no subset relationship to ", bnode$name, ", moving on to next node\n")
   if(setequal(anode$leavesVec, bnode$leavesVec)){
     df <- df %>% add_row(columnA=anode$colName, nodeA=anode$name, 
                columnB=bnode$colName, nodeB=bnode$name)
@@ -125,6 +122,6 @@ search_for_matching <- function(anode, bnode, search_depth=0, verbose=FALSE){
 }
 
 
-equivalent_leaves <- function(tree1, tree2){
-  Traverse(tree1, traversal = "level", filterFun = isNotLeaf) %>% map_dfr(~ search_for_matching(.x, tree2))
+equivalent_leaves <- function(tree1, tree2, verbose=FALSE){
+  Traverse(tree1, traversal = "level", filterFun = isNotLeaf) %>% map_dfr(~ search_for_matching(.x, tree2, verbose=verbose))
 }
